@@ -5,7 +5,7 @@ const Slider = () => {
         <div className='container-fluid'>
             <div className='portada row'>
                 <div className='col-6'>
-                    <img src={require(`../../assets/img/hamburguesaPortada.png`)} style={{width: '100%'}} />
+                    <img src={require(`../../../assets/img/hamburguesaPortada.png`)} style={{width: '100%'}} />
                 </div>
                 <div className='col-5 texto'>
                     <h2 className='bulldog blanco d-flex justify-content-end texto'>Bulldog</h2>

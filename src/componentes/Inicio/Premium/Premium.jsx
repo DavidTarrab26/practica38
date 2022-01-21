@@ -4,7 +4,6 @@ import './Premium.css'
 
 const Premium = () => {
     const [premium, setPremium] = useState('')
-    console.log(premium)
     useEffect(()=>{
         axios
     .get('https://apipdtc.herokuapp.com/bulldog/premium')
@@ -22,11 +21,11 @@ const Premium = () => {
             <div className='row d-flex justify-content-center'>
             {premium.map((prem)=>(
                 
-                    <div className='col-6'>
-                        <div className="card mb-3 shadow" key={prem.id}>
+                    <div className='col-6' key={prem.id}>
+                        <div className="card mb-3 shadow">
                             <div className="row g-0">
                                 <div className="col-md-4">
-                                    <img src={require(`../../assets/img/premium/${prem.nombre}.png`)} className="img-fluid premiumImg mt-2 mx-2"/>
+                                    <img src={require(`../../../assets/img/premium/${prem.nombre}.png`)} className="img-fluid premiumImg mt-2 mx-2"/>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">

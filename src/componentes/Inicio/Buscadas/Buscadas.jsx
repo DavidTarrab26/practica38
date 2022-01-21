@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Context } from '../../../store/appContext';
 import './Buscadas.css'
 
 const Buscadas = () => {
-
+    const {agregarAlCarrito} = useContext(Context)
     const [buscados, setBuscados] = useState('')
 
     useEffect(()=>{
@@ -24,18 +25,18 @@ const Buscadas = () => {
             :
             <div className='d-flex justify-content-between container'>
             {buscados.map((buscado)=>(
-                <div className="card card1 shadow" style={{width: '18rem'}}>
-                    <img src={require(`../../assets/img/buscadas/${buscado.imagen}.png`)} className='radius'/>
+                <div className="card card1 shadow" style={{width: '18rem'}} key={buscado.id}>
+                    <img src={require(`../../../assets/img/buscadas/${buscado.imagen}.png`)} className='radius'/>
                     <div className="card-body">
                         <h5 className="card-title card-title1">{buscado.nombre}</h5>
-                        {buscado.ingredientes.map((ingre)=>(
-                            <div className='ingre'>
+                        {buscado.ingredientes.map((ingre, index)=>(
+                            <div className='ingre' key={index}>
                                 <p>- {ingre}</p>
                             </div>
                         ))}
                         <div className='d-flex justify-content-between'>
                             <p className="card-text precio mt-3">${buscado.precio}</p>
-                            <button className='btn btn1 mt-3'>comprar</button>
+                            <button className='btn btn1 mt-3' onClick={()=>agregarAlCarrito({...buscado})}>comprar</button>
                         </div>
                     </div>
                 </div>
