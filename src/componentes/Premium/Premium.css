@@ -1,0 +1,11 @@
+.premiumImg{
+    border-radius: 20% !important;
+}
+.titlePremium{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.precioPremium{
+    font-weight: 600;
+    font-size: 1.2em;
+}

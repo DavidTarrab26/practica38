@@ -1,0 +1,31 @@
+.buscadas{
+    background-color: rgb(242, 192, 69);
+    padding: 30px 0px;
+}
+.ingre{
+    margin-bottom: -15px;
+}
+.card1 {
+    margin-top: 2em;
+    border-radius: 2em !important;
+    border: 0 !important;
+  }
+  .card .card-title1 {
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .radius{
+    border-top-left-radius: 2em ;
+    border-top-right-radius: 2em ;
+  }
+  .borde{
+    border: black solid 2px !important;
+  }
+  .precio{
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+  .btn1{
+    background-color: rgb(242, 192, 69) !important;
+  }

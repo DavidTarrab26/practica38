@@ -1,0 +1,21 @@
+.heigth{
+    height: 50px;
+    width: 80px;
+}
+.todo{
+    background-color: black;
+}
+.blanco{
+    color: white;
+}
+.elegi{
+    height: 100%;
+    margin-left: 40%;
+}
+.borde{
+    border: solid 2px white;
+}
+.bi{
+    margin-top: 10px;
+    color: red;
+}
