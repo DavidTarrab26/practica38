@@ -4,7 +4,7 @@ import { Context } from '../../../store/appContext';
 import './Buscadas.css'
 
 const Buscadas = () => {
-    const {agregarAlCarrito} = useContext(Context)
+    const {agregarAlCarrito, carrito} = useContext(Context)
     const [buscados, setBuscados] = useState('')
 
     useEffect(()=>{
@@ -36,7 +36,7 @@ const Buscadas = () => {
                         ))}
                         <div className='d-flex justify-content-between'>
                             <p className="card-text precio mt-3">${buscado.precio}</p>
-                            <button className='btn btn1 mt-3' onClick={()=>agregarAlCarrito({...buscado})}>comprar</button>
+                            <button className='btn btn1 mt-3' onClick={()=>agregarAlCarrito({...buscado})} disabled={carrito.find(carro=>carro.id == buscado.id ? true : false)}>comprar</button>
                         </div>
                     </div>
                 </div>

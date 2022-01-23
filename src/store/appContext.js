@@ -9,8 +9,11 @@ const AppProvider = ({children}) => {
         setCarrito([producto, ...carrito])
         console.log(carrito)
     }
+    const remove = (id) =>{
+        setCarrito(carrito.filter((ped) => ped.id != id))
+    }
     return ( 
-        <Context.Provider value={{carrito, setCarrito, agregarAlCarrito}}>
+        <Context.Provider value={{carrito, setCarrito, agregarAlCarrito, remove}}>
             {children}
         </Context.Provider>
      );

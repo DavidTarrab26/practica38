@@ -42,7 +42,9 @@ const Ingredientes = () => {
                             <div key={ingre.id}>
                                 <div className="d-grid gap-2 col-6 mx-auto my-1">
                                     <button className="btn btn-outline-warning d-flex justify-content-between" type="button" onClick={()=>mostrar(ingre, ingre.precio)} 
-                                    disabled={pedido.find(ped=>ped.id == ingre.id ? true : false)}><img className='heigth' src={require(`../../../assets/img/ingredientes/${ingre.imagen}.png`)}></img> {ingre.nombre} ${ingre.precio}</button>
+                                        disabled={pedido.find(ped=>ped.id == ingre.id ? true : false)}><img className='heigth' src={require(`../../../assets/img/ingredientes/${ingre.imagen}.png`)}></img> 
+                                        {ingre.nombre} ${ingre.precio}
+                                    </button>
                                 </div>
                             </div>
                         ))
@@ -59,12 +61,19 @@ const Ingredientes = () => {
                     /* IMPRIMO LA HAMBURGUESA FIJA */
                         <div>
                             <div className="d-grid gap-2 col-6 mx-auto">
-                                <button className="btn btn-outline-warning d-flex justify-content-between" type="button" disabled={true}><img className='heigth' src={carne}></img>hamburguesa $350</button>
+                                <button className="btn btn-outline-warning d-flex justify-content-between" type="button" disabled={true}>
+                                    <img className='heigth' src={carne}></img>
+                                    hamburguesa $350
+                                </button>
                             </div>
                             {/* MAP DEL STATE PEDIDOS CON LO ELEGIDO POR EL CLIENTE */}
                             {pedido.map((ped)=>(
                                 <div className="d-grid gap-2 col-6 mx-auto" key={ped.id}>
-                                    <button className="btn btn-outline-warning d-flex justify-content-between" type="button"><img className='heigth' src={require(`../../../assets/img/ingredientes/${ped.imagen}.png`)}></img>{ped.nombre} ${ped.precio} <i className="bi bi-trash-fill basura" onClick={()=> remove(ped.id, ped.precio)}></i></button>
+                                    <button className="btn btn-outline-warning d-flex justify-content-between" type="button">
+                                        <img className='heigth' src={require(`../../../assets/img/ingredientes/${ped.imagen}.png`)}></img>
+                                            {ped.nombre} ${ped.precio} 
+                                        <i className="bi bi-trash-fill basura" onClick={()=> remove(ped.id, ped.precio)}></i>
+                                    </button>
                                 </div>
                             ))}
                         </div>
