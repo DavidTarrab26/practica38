@@ -4,10 +4,9 @@ import { Context } from '../../store/appContext';
 import './Ordenes.css'
 
 const Ordenes = () => {
-    const {carrito, remove} = useContext(Context)
+    const {carrito, remove, finCompra, confirmarCompra} = useContext(Context)
     const [totalOrden, setTotalOrden] = useState (0)
     const [cantidad, setCantidad] = useState('')
-    const [confirmarCompra, setConfirmarCompra] = useState('')
 
     const ordenar = (e) =>{
         console.log(cantidad)
@@ -15,9 +14,6 @@ const Ordenes = () => {
 
     const sumarTotal = (precio) =>{
         setTotalOrden(totalOrden+precio)
-    }
-    const finCompra = () =>{
-        setConfirmarCompra('Tu compra ha sido realizada con exito')
     }
     return ( 
         <>

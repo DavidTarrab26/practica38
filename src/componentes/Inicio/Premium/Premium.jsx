@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { Context } from '../../../store/appContext';
 import './Premium.css'
 
 const Premium = () => {
+    const {agregarAlCarrito, carrito} = useContext(Context)
     const [premium, setPremium] = useState('')
     useEffect(()=>{
         axios
@@ -33,7 +35,7 @@ const Premium = () => {
                                         <p className="card-text">{prem.ingredientes[0]}, {prem.ingredientes[1]}, {prem.ingredientes[2]}, {prem.ingredientes[3]}</p>
                                         <div className='d-flex justify-content-between'>
                                             <h6 className='precioPremium'>${prem.precio}</h6>
-                                            <button className='btn btn1'>Comprar</button>
+                                            <button className='btn btn1' onClick={()=>agregarAlCarrito({...prem})} disabled={carrito.find(carro=>carro.id == prem.id ? true : false)}>Comprar</button>
                                         </div>
                                     </div>
                                 </div>

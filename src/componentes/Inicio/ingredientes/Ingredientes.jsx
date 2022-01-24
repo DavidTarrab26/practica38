@@ -1,9 +1,11 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './Ingredientes.css'
 import carne from '../../../assets/img/ingredientes/Carne.png'
+import { Context } from '../../../store/appContext';
 
 const Ingredientes = () => {
+    const {finCompra, confirmarCompra} = useContext(Context)
     const [ingredientes, setIngredientes] = useState('')
     const [pedido, setPedido] = useState([])
     const [total, setTotal] = useState(350)
@@ -27,6 +29,7 @@ const Ingredientes = () => {
     }
     
     return ( 
+        <>
         <div className='container-fluid'>
             <div className='row mt-5 todo'>
                 <div className='my-3'>
@@ -79,16 +82,20 @@ const Ingredientes = () => {
                         </div>
                     }
                 </div>
-                <div className='blanco d-flex justify-content-end'>
+                <div className='blanco'>
                     {pedido.length == 0 ?
                     ''
                     :
-                    <h2>TOTAL:{total}</h2>
+                    <div className='text-center'>
+                        <h2>TOTAL:${total}</h2>
+                        <button className='btn btn-success' onClick={()=>finCompra()}>Finalizar Compra</button>
+                    </div>
                     }
                     
                 </div>
             </div>
         </div>
+        </>
      );
 }
  
